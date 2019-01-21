@@ -22,6 +22,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'airblade/vim-gitgutter'
 
+Plug 'jparise/vim-graphql'
+
 call plug#end()
 
 " Start autocompletion after 4 chars
