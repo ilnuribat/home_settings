@@ -1,3 +1,4 @@
+:syntax on
 :set tabstop=2
 :set shiftwidth=2
 :set smarttab
@@ -21,6 +22,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'airblade/vim-gitgutter'
 
+Plug 'vim-syntastic/syntastic'
+
 Plug 'jparise/vim-graphql'
 
 call plug#end()
@@ -29,6 +32,21 @@ call plug#end()
 let g:ycm_min_num_of_chars_for_completion=3
 let g:ycm_min_num_identifier_candidate_chars=3
 let g:ycm_enable_diagnostic_highlighting=0
+
+let NERDTreeShowLineNumbers=1
+
+" ESLint config
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+let g:syntastic_mode_map={'mode': 'passive'}
 
 execute pathogen#infect()
 call pathogen#helptags()
@@ -55,9 +73,7 @@ call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-" autocmd VimEnter * NERDTree
-" autocmd BufEnter * NERDTreeMirror
+autocmd BufWinEnter * NERDTreeMirror
 
 map <C-f> :NERDTreeFocus<CR>
 map <F6> :NERDTreeClose<CR>
@@ -70,4 +86,3 @@ noremap <C-J> <C-W>j
 noremap <C-K> <C-W>k
 noremap <C-H> <C-W>h
 noremap <C-L> <C-W>l
-
