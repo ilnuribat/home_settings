@@ -22,9 +22,9 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'airblade/vim-gitgutter'
 
-Plug 'vim-syntastic/syntastic'
-
 Plug 'jparise/vim-graphql'
+
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -34,19 +34,12 @@ let g:ycm_min_num_identifier_candidate_chars=3
 let g:ycm_enable_diagnostic_highlighting=0
 
 let NERDTreeShowLineNumbers=1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let g:NERDTreeWinSize = 30
+let g:nerdtree_tabs_focus_on_files = 1
 
-" ESLint config
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exe = 'npm run lint --'
-let g:syntastic_mode_map={'mode': 'passive'}
+let b:ale_linters = {'javascript': ['eslint']}
 
 execute pathogen#infect()
 call pathogen#helptags()
