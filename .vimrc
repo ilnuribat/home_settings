@@ -26,6 +26,8 @@ Plug 'jparise/vim-graphql'
 
 Plug 'w0rp/ale'
 
+Plug 'jiangmiao/auto-pairs'
+
 call plug#end()
 
 " Start autocompletion after 4 chars
