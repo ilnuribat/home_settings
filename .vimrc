@@ -4,7 +4,8 @@
 :set smarttab
 :set expandtab
 :set smartindent
-:set number
+:set rnu
+:set backspace=indent,eol,start
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -28,12 +29,17 @@ Plug 'w0rp/ale'
 
 Plug 'jiangmiao/auto-pairs'
 
+Plug 'pearofducks/ansible-vim'
+
+Plug 'chr4/nginx.vim'
+
 call plug#end()
 
 " Start autocompletion after 4 chars
 let g:ycm_min_num_of_chars_for_completion=3
 let g:ycm_min_num_identifier_candidate_chars=3
 let g:ycm_enable_diagnostic_highlighting=0
+let g:ycm_add_preview_to_completeopt = 1 
 
 let NERDTreeShowLineNumbers=1
 let NERDTreeMinimalUI = 1
