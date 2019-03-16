@@ -4,9 +4,8 @@
 :set smarttab
 :set expandtab
 :set smartindent
-:set rnu
+:set relativenumber
 :set backspace=indent,eol,start
-:set hlsearch                          " Highlight search results
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
