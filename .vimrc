@@ -87,6 +87,8 @@ noremap <C-K> <C-W>k
 noremap <C-H> <C-W>h
 noremap <C-L> <C-W>l
 
+nnoremap <F4> :!npm test<cr>
+
 :inoremap <silent> <Esc> <Esc>`^
 
 if has("autocmd")
