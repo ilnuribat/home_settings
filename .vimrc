@@ -33,6 +33,11 @@ Plug 'pearofducks/ansible-vim'
 
 Plug 'chr4/nginx.vim'
 
+" typescript
+"
+" syntax
+Plug 'leafgarland/typescript-vim'
+
 call plug#end()
 
 " Start autocompletion after 4 chars
