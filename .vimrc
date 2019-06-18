@@ -6,6 +6,7 @@
 :set smartindent
 :set relativenumber
 :set backspace=indent,eol,start
+:set statusline+=%{gutentags#statusline()}
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -32,6 +33,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'pearofducks/ansible-vim'
 
 Plug 'chr4/nginx.vim'
+
+Plug 'ludovicchabant/vim-gutentags'
 
 " typescript
 "
