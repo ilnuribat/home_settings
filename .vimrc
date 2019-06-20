@@ -36,6 +36,8 @@ Plug 'chr4/nginx.vim'
 
 Plug 'ludovicchabant/vim-gutentags'
 
+Plug 'dracula/vim', { 'as': 'dracula' }
+
 " typescript
 "
 " syntax
