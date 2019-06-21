@@ -4,7 +4,7 @@
 :set smarttab
 :set expandtab
 :set smartindent
-:set relativenumber
+:set relativenumber number
 :set backspace=indent,eol,start
 :set statusline+=%{gutentags#statusline()}
 
@@ -130,3 +130,5 @@ endfunction
 
 " Highlight currently open buffer in NERDTree
 autocmd BufEnter * call SyncTree()
+
+:color dracula
