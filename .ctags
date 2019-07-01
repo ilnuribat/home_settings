@@ -3,6 +3,7 @@
 --exclude=tmp
 --exclude=node_modules
 --exclude=tests
+--exclude=dist
 
 --langdef=typescript
 --langmap=typescript:.ts.tsx
