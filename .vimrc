@@ -5,6 +5,7 @@
 :set expandtab
 :set smartindent
 :set relativenumber number
+:set mouse=a
 :set backspace=indent,eol,start
 :set statusline+=%{gutentags#statusline()}
 
