@@ -39,6 +39,10 @@ Plug 'ludovicchabant/vim-gutentags'
 
 Plug 'dracula/vim', { 'as': 'dracula' }
 
+Plug 'yuttie/comfortable-motion.vim'
+
+Plug 'kristijanhusak/vim-project-lint'
+
 " typescript
 "
 " syntax
@@ -59,6 +63,9 @@ let g:NERDTreeWinSize = 30
 let g:nerdtree_tabs_focus_on_files = 1
 
 let b:ale_linters = {'javascript': ['eslint']}
+
+let g:project_lint#enabled_linters = { 'javascript': ['eslint'] }
+let g:project_lint#linter_args = { 'eslint': '--ext .ts' }
 
 execute pathogen#infect()
 call pathogen#helptags()
