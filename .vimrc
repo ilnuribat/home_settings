@@ -61,6 +61,8 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let g:NERDTreeWinSize = 30
 let g:nerdtree_tabs_focus_on_files = 1
+let NERDTreeMapJumpFirstChild='\K'
+let NERDTreeMapJumpLastChild='\J'
 
 let b:ale_linters = {'javascript': ['eslint']}
 
@@ -95,18 +97,16 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd BufWinEnter * NERDTreeMirror
 
-map <C-f> :NERDTreeToggle<CR>
+noremap <C-f> :NERDTreeToggle<CR>
 
-noremap qt :tabclose<CR>
-noremap <C-PageUp> :tabprevious<CR>
-noremap <C-PageDown :tabnext<CR>
+nmap qt :tabclose<CR>
+nmap <S-J> :tabprevious<CR>
+nmap <S-K> :tabnext<CR>
 
 noremap <C-J> <C-W>j
 noremap <C-K> <C-W>k
 noremap <C-H> <C-W>h
 noremap <C-L> <C-W>l
-
-nnoremap <F4> :!npm test<cr>
 
 :inoremap <silent> <Esc> <Esc>`^
 
