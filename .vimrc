@@ -41,8 +41,6 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 
 Plug 'yuttie/comfortable-motion.vim'
 
-Plug 'kristijanhusak/vim-project-lint'
-
 " typescript
 "
 " syntax
@@ -66,8 +64,6 @@ let NERDTreeMapJumpLastChild='\J'
 
 let b:ale_linters = {'javascript': ['eslint']}
 
-let g:project_lint#enabled_linters = { 'javascript': ['eslint'] }
-let g:project_lint#linter_args = { 'eslint': '--ext .ts' }
 
 execute pathogen#infect()
 call pathogen#helptags()
