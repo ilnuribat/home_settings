@@ -8,7 +8,6 @@
 :set mouse=a
 :set backspace=indent,eol,start
 :set statusline+=%{gutentags#statusline()}
-:set foldenable
 :set foldmethod=syntax
 
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -136,5 +135,7 @@ endfunction
 
 " Highlight currently open buffer in NERDTree
 autocmd BufEnter * call SyncTree()
+
+au BufRead * normal zR
 
 :color dracula
