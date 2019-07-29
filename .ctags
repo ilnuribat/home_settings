@@ -4,6 +4,7 @@
 --exclude=node_modules
 --exclude=tests
 --exclude=dist
+--exclude=coverage
 
 --langdef=typescript
 --langmap=typescript:.ts.tsx
