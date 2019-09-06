@@ -9,6 +9,7 @@
 :set backspace=indent,eol,start
 :set statusline+=%{gutentags#statusline()}
 :set foldmethod=syntax
+:set langmap=ёйцукенгшщзхъфывапролджэячсмитьбю;`qwertyuiop[]asdfghjkl\;'zxcvbnm\,.,ЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;QWERTYUIOP{}ASDFGHJKL:\"ZXCVBNM<>
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -40,12 +41,17 @@ Plug 'ludovicchabant/vim-gutentags'
 
 Plug 'dracula/vim', { 'as': 'dracula' }
 
-Plug 'yuttie/comfortable-motion.vim'
+Plug 'tpope/vim-fugitive'
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " typescript
 "
 " syntax
 Plug 'leafgarland/typescript-vim'
+
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
@@ -94,7 +100,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd BufWinEnter * NERDTreeMirror
 
-noremap <C-f> :NERDTreeToggle<CR>
+nmap <f5> :NERDTreeToggle<CR>
 
 nmap qt :tabclose<CR>
 nmap <S-J> :tabprevious<CR>
