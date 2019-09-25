@@ -27,9 +27,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'airblade/vim-gitgutter'
 
-Plug 'jparise/vim-graphql'
-
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 
 Plug 'jiangmiao/auto-pairs'
 
@@ -51,8 +49,6 @@ Plug 'junegunn/fzf.vim'
 " syntax
 Plug 'leafgarland/typescript-vim'
 
-Plug 'easymotion/vim-easymotion'
-
 call plug#end()
 
 " Start autocompletion after 4 chars
@@ -69,7 +65,9 @@ let g:nerdtree_tabs_focus_on_files = 1
 let NERDTreeMapJumpFirstChild='\K'
 let NERDTreeMapJumpLastChild='\J'
 
-let b:ale_linters = {'javascript': ['eslint']}
+let g:ale_linters = {'javascript': ['eslint'], 'typescript': ['eslint']}
+let g:ale_completion_enabled = 1
+let g:ale_completion_tsserver_autoimport = 1
 
 
 execute pathogen#infect()
