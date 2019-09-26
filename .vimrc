@@ -41,12 +41,13 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 
 Plug 'tpope/vim-fugitive'
 
+Plug 'easymotion/vim-easymotion' 
+
+Plug 'pangloss/vim-javascript'
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" typescript
-"
-" syntax
 Plug 'leafgarland/typescript-vim'
 
 call plug#end()
@@ -60,10 +61,11 @@ let g:ycm_add_preview_to_completeopt = 1
 let NERDTreeShowLineNumbers=1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-let g:NERDTreeWinSize = 30
+let g:NERDTreeWinSize = 35
 let g:nerdtree_tabs_focus_on_files = 1
 let NERDTreeMapJumpFirstChild='\K'
 let NERDTreeMapJumpLastChild='\J'
+let NERDTreeAutoDeleteBuffer = 1
 
 let g:ale_linters = {'javascript': ['eslint'], 'typescript': ['eslint']}
 let g:ale_completion_enabled = 1
