@@ -9,7 +9,8 @@
 :set backspace=indent,eol,start
 :set statusline+=%{gutentags#statusline()}
 :set foldmethod=syntax
-:set langmap=ёйцукенгшщзхъфывапролджэячсмитьбю;`qwertyuiop[]asdfghjkl\;'zxcvbnm\,.,ЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;QWERTYUIOP{}ASDFGHJKL:\"ZXCVBNM<>
+set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
+
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -19,7 +20,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer --javascript-completer' }
 
 Plug 'scrooloose/nerdtree'
 
@@ -27,6 +28,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'airblade/vim-gitgutter'
 
+" syntax checks
 Plug 'dense-analysis/ale'
 
 Plug 'jiangmiao/auto-pairs'
@@ -39,7 +41,7 @@ Plug 'ludovicchabant/vim-gutentags'
 
 Plug 'dracula/vim', { 'as': 'dracula' }
 
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 
 Plug 'easymotion/vim-easymotion' 
 
@@ -48,7 +50,9 @@ Plug 'pangloss/vim-javascript'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-Plug 'leafgarland/typescript-vim'
+" Plug 'leafgarland/typescript-vim'
+
+Plug 'jistr/vim-nerdtree-tabs'
 
 call plug#end()
 
@@ -56,7 +60,8 @@ call plug#end()
 let g:ycm_min_num_of_chars_for_completion=3
 let g:ycm_min_num_identifier_candidate_chars=3
 let g:ycm_enable_diagnostic_highlighting=0
-let g:ycm_add_preview_to_completeopt = 1 
+let g:ycm_add_preview_to_completeopt = 0
+set completeopt-=preview
 
 let NERDTreeShowLineNumbers=1
 let NERDTreeMinimalUI = 1
