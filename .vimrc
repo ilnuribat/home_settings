@@ -39,7 +39,7 @@ Plug 'chr4/nginx.vim'
 
 Plug 'ludovicchabant/vim-gutentags'
 
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'dracula/vim', { 'name': 'dracula' }
 
 " Plug 'tpope/vim-fugitive'
 
@@ -49,8 +49,6 @@ Plug 'pangloss/vim-javascript'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
-" Plug 'leafgarland/typescript-vim'
 
 Plug 'jistr/vim-nerdtree-tabs'
 
@@ -76,6 +74,9 @@ let g:ale_linters = {'javascript': ['eslint'], 'typescript': ['eslint']}
 let g:ale_completion_enabled = 1
 let g:ale_completion_tsserver_autoimport = 1
 
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 execute pathogen#infect()
 call pathogen#helptags()
@@ -149,4 +150,6 @@ autocmd BufEnter * call SyncTree()
 
 au BufRead * normal zR
 
-:color dracula
+":color dracula
+colorscheme dracula
+
