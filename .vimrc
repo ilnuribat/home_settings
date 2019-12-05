@@ -47,9 +47,6 @@ Plug 'easymotion/vim-easymotion'
 
 Plug 'pangloss/vim-javascript'
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-
 Plug 'jistr/vim-nerdtree-tabs'
 
 call plug#end()
