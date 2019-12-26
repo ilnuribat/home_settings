@@ -3,3 +3,5 @@
 !.vimrc
 !.gitignore
 !.ctags
+!/.ssh/config
+!/.ssh/config.d/
