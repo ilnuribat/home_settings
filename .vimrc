@@ -105,7 +105,6 @@ autocmd BufWinEnter * NERDTreeMirror
 
 nmap <f5> :NERDTreeToggle<CR>
 
-nmap qt :tabclose<CR>
 nmap <S-J> :tabprevious<CR>
 nmap <S-K> :tabnext<CR>
 
@@ -147,6 +146,5 @@ autocmd BufEnter * call SyncTree()
 
 au BufRead * normal zR
 
-":color dracula
 colorscheme dracula
 
