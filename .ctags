@@ -4,3 +4,4 @@
 --exclude=tests
 --exclude=dist
 --exclude=coverage
+--exclude=node_modules
