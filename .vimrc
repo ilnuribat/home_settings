@@ -20,7 +20,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer --javascript-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer' }
 
 Plug 'scrooloose/nerdtree'
 
@@ -56,6 +56,8 @@ let g:ycm_min_num_of_chars_for_completion=3
 let g:ycm_min_num_identifier_candidate_chars=3
 let g:ycm_enable_diagnostic_highlighting=0
 let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_collect_identifiers_from_tags_files = 0
+
 set completeopt-=preview
 
 let NERDTreeShowLineNumbers=1
