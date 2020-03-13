@@ -9,7 +9,8 @@
 :set backspace=indent,eol,start
 :set statusline+=%{gutentags#statusline()}
 :set foldmethod=syntax
-set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
+:set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
+:set noswapfile
 
 
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -20,7 +21,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer' }
 
 Plug 'scrooloose/nerdtree'
 
@@ -41,10 +42,9 @@ Plug 'ludovicchabant/vim-gutentags'
 
 Plug 'dracula/vim', { 'name': 'dracula' }
 
-" Plug 'tpope/vim-fugitive'
-
 Plug 'easymotion/vim-easymotion' 
 
+" Vastly improved Javascript indentation and syntax support in Vim
 Plug 'pangloss/vim-javascript'
 
 Plug 'jistr/vim-nerdtree-tabs'
@@ -52,11 +52,11 @@ Plug 'jistr/vim-nerdtree-tabs'
 call plug#end()
 
 " Start autocompletion after 4 chars
-let g:ycm_min_num_of_chars_for_completion=3
-let g:ycm_min_num_identifier_candidate_chars=3
-let g:ycm_enable_diagnostic_highlighting=0
-let g:ycm_add_preview_to_completeopt = 0
-let g:ycm_collect_identifiers_from_tags_files = 0
+"let g:ycm_min_num_of_chars_for_completion=3
+"let g:ycm_min_num_identifier_candidate_chars=3
+"let g:ycm_enable_diagnostic_highlighting=0
+"let g:ycm_add_preview_to_completeopt = 0
+"let g:ycm_collect_identifiers_from_tags_files = 0
 
 set completeopt-=preview
 
@@ -69,7 +69,7 @@ let NERDTreeMapJumpFirstChild='\K'
 let NERDTreeMapJumpLastChild='\J'
 let NERDTreeAutoDeleteBuffer = 1
 
-let g:ale_linters = {'javascript': ['eslint'], 'typescript': ['eslint']}
+let g:ale_linters = {'javascript': ['eslint']}
 let g:ale_completion_enabled = 1
 let g:ale_completion_tsserver_autoimport = 1
 
