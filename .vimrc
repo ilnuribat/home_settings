@@ -21,7 +21,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer' }
 
 Plug 'scrooloose/nerdtree'
 
@@ -52,11 +52,11 @@ Plug 'jistr/vim-nerdtree-tabs'
 call plug#end()
 
 " Start autocompletion after 4 chars
-"let g:ycm_min_num_of_chars_for_completion=3
-"let g:ycm_min_num_identifier_candidate_chars=3
-"let g:ycm_enable_diagnostic_highlighting=0
-"let g:ycm_add_preview_to_completeopt = 0
-"let g:ycm_collect_identifiers_from_tags_files = 0
+let g:ycm_min_num_of_chars_for_completion=3
+let g:ycm_min_num_identifier_candidate_chars=3
+let g:ycm_enable_diagnostic_highlighting=0
+let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_collect_identifiers_from_tags_files = 0
 
 set completeopt-=preview
 
@@ -70,8 +70,8 @@ let NERDTreeMapJumpLastChild='\J'
 let NERDTreeAutoDeleteBuffer = 1
 
 let g:ale_linters = {'javascript': ['eslint']}
-let g:ale_completion_enabled = 1
-let g:ale_completion_tsserver_autoimport = 1
+let g:ale_completion_enabled = 0
+let g:ale_completion_tsserver_autoimport = 0
 
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
