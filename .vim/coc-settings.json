@@ -1,0 +1,29 @@
+{
+  "tsserver": {
+    "reportStyleChecksAsWarnings": false
+  },
+  "typescript": {
+    "suggest": {
+      "enabled": false
+    },
+    "format": {
+      "enabled": false
+    },
+    "suggestionActions": {
+      "enabled": false
+    },
+    "validate": {
+      "enabled": false
+    },
+    "showUnused": false
+  },
+  "javascript": {
+    "format": {
+      "enabled": true
+    },
+    "showUnused": false,
+    "suggestionActions": {
+      "enabled": false
+    }
+  }
+}

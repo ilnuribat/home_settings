@@ -1,16 +1,16 @@
-:syntax on
-:set tabstop=2
-:set shiftwidth=2
-:set smarttab
-:set expandtab
-:set smartindent
-:set relativenumber number
-:set mouse=a
-:set backspace=indent,eol,start
-:set statusline+=%{gutentags#statusline()}
-:set foldmethod=syntax
-:set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
-:set noswapfile
+syntax on
+set tabstop=2
+set shiftwidth=2
+set smarttab
+set expandtab
+set smartindent
+set relativenumber number
+set mouse=a
+set backspace=indent,eol,start
+set foldmethod=syntax
+
+"set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
+set noswapfile
 
 
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -21,11 +21,14 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer' }
+" completer
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'scrooloose/nerdtree'
 
 Plug 'Xuyuanp/nerdtree-git-plugin'
+
+Plug 'jistr/vim-nerdtree-tabs'
 
 Plug 'airblade/vim-gitgutter'
 
@@ -34,29 +37,45 @@ Plug 'dense-analysis/ale'
 
 Plug 'jiangmiao/auto-pairs'
 
-Plug 'pearofducks/ansible-vim'
-
-Plug 'chr4/nginx.vim'
-
-Plug 'ludovicchabant/vim-gutentags'
-
 Plug 'dracula/vim', { 'name': 'dracula' }
 
-Plug 'easymotion/vim-easymotion' 
+Plug 'easymotion/vim-easymotion'
 
 " Vastly improved Javascript indentation and syntax support in Vim
 Plug 'pangloss/vim-javascript'
 
-Plug 'jistr/vim-nerdtree-tabs'
-
 call plug#end()
 
-" Start autocompletion after 4 chars
-let g:ycm_min_num_of_chars_for_completion=3
-let g:ycm_min_num_identifier_candidate_chars=3
-let g:ycm_enable_diagnostic_highlighting=0
-let g:ycm_add_preview_to_completeopt = 0
-let g:ycm_collect_identifiers_from_tags_files = 0
+" -------COC.vim------------
+" TextEdit might fail if hidden is not set.
+set hidden
+
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
+
+set updatetime=300
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" trigger completion.
+inoremap <silent><expr> <C-n> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+if has('patch8.1.1068')
+  " Use `complete_info` if your (Neo)Vim version supports it.
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" -------COC.vim------------
 
 set completeopt-=preview
 
@@ -71,7 +90,9 @@ let NERDTreeAutoDeleteBuffer = 1
 
 let g:ale_linters = {'javascript': ['eslint']}
 let g:ale_completion_enabled = 0
-let g:ale_completion_tsserver_autoimport = 0
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
+
 
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
