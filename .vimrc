@@ -37,6 +37,8 @@ Plug 'dense-analysis/ale'
 
 Plug 'jiangmiao/auto-pairs'
 
+Plug 'pearofducks/ansible-vim'
+
 Plug 'dracula/vim', { 'name': 'dracula' }
 
 Plug 'easymotion/vim-easymotion'
