@@ -37,6 +37,8 @@ Plug 'dense-analysis/ale'
 
 Plug 'jiangmiao/auto-pairs'
 
+Plug 'pearofducks/ansible-vim'
+
 Plug 'dracula/vim', { 'name': 'dracula' }
 
 Plug 'easymotion/vim-easymotion'
@@ -59,7 +61,6 @@ set updatetime=300
 " trigger completion.
 inoremap <silent><expr> <C-n> coc#refresh()
 
-" -------COC.vim------------
 
 set completeopt-=preview
 
