@@ -8,9 +8,11 @@ set relativenumber number
 set mouse=a
 set backspace=indent,eol,start
 set foldmethod=syntax
+set incsearch
+set noswapfile
+set nowrap
 
 "set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
-set noswapfile
 
 
 if empty(glob('~/.vim/autoload/plug.vim'))
