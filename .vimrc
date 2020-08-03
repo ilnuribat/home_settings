@@ -120,6 +120,9 @@ noremap <C-K> <C-W>k
 noremap <C-H> <C-W>h
 noremap <C-L> <C-W>l
 
+noremap <f9> :w<CR>
+noremap <f10> :q<CR>
+
 :inoremap <silent> <Esc> <Esc>`^
 
 if has("autocmd")
