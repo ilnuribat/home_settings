@@ -1,0 +1,12 @@
+#!/bin/bash
+
+docker rm -f mitm
+
+docker run \
+  --name=mitm \
+  -v /var/lib/huntersales/mitm/:/home/mitmproxy/.mitmproxy \
+  -p 8081:8081 \
+  -p 7070:8080 \
+  -d \
+  mitmproxy/mitmproxy \
+    mitmweb --web-host 0.0.0.0
