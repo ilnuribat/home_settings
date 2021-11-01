@@ -2,6 +2,7 @@
   "tsserver": {
     "reportStyleChecksAsWarnings": false
   },
+
   "typescript": {
     "suggest": {
       "enabled": false
@@ -17,6 +18,7 @@
     },
     "showUnused": false
   },
+
   "javascript": {
     "format": {
       "enabled": true
@@ -25,5 +27,8 @@
     "suggestionActions": {
       "enabled": false
     }
+  },
+  "diagnostics": {
+    "displayByAle": false
   }
 }
