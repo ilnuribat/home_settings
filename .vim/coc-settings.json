@@ -29,6 +29,6 @@
     }
   },
   "diagnostics": {
-    "displayByAle": false
+    "displayByAle": true
   }
 }
