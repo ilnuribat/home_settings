@@ -40,6 +40,12 @@ call plug#begin('~/.vim/plugged')
 " completer
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" syntax checks
+Plug 'dense-analysis/ale'
+
+" Vastly improved Javascript indentation and syntax support in Vim
+ Plug 'pangloss/vim-javascript'
+
 Plug 'scrooloose/nerdtree'
 
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -48,9 +54,6 @@ Plug 'jistr/vim-nerdtree-tabs'
 
 Plug 'airblade/vim-gitgutter'
 
-" syntax checks
-Plug 'dense-analysis/ale'
-
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'pearofducks/ansible-vim'
@@ -58,9 +61,6 @@ Plug 'pearofducks/ansible-vim'
 Plug 'dracula/vim', { 'name': 'dracula' }
 
 Plug 'easymotion/vim-easymotion'
-
-" Vastly improved Javascript indentation and syntax support in Vim
-Plug 'pangloss/vim-javascript'
 
 " Fuzzy search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -71,17 +71,25 @@ Plug 'jparise/vim-graphql'
 
 call plug#end()
 
-
-" use <tab> for trigger completion and navigate to the next complete item
-function! CheckBackSpace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ CheckBackSpace() ? "\<Tab>" :
+" Use tab for trigger completion with characters ahead and navigate
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 
 

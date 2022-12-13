@@ -30,5 +30,8 @@
   },
   "diagnostics": {
     "displayByAle": true
+  },
+  "suggest": {
+    "noselect": true
   }
 }
