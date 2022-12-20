@@ -17,7 +17,6 @@ set nocompatible
 set ruler
 
 set langmap=ФфшуциловрдгчщЩ;AaiewbkjdhluxoO
-"set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
 
 " -------COC.vim------------
 " TextEdit might fail if hidden is not set.
@@ -65,7 +64,7 @@ Plug 'easymotion/vim-easymotion'
 " Fuzzy search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-"   apt-get install silversearcher-ag
+"apt-get install silversearcher-ag
 
 Plug 'jparise/vim-graphql'
 
@@ -91,8 +90,14 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+let g:_linters = {'javascript': ['eslint']}
+let g:_completion_enabled = 0
+let g:_lint_on_text_changed = 'normal'
+let g:_lint_on_insert_leave = 1
+let g:_disable_lsp = 1
 
 
+" ----- NERD TREE CONFIGS ----------
 let NERDTreeShowLineNumbers=1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
@@ -101,12 +106,6 @@ let g:nerdtree_tabs_focus_on_files = 1
 let NERDTreeMapJumpFirstChild='\K'
 let NERDTreeMapJumpLastChild='\J'
 let NERDTreeAutoDeleteBuffer = 1
-
-let g:ale_linters = {'javascript': ['eslint']}
-let g:ale_completion_enabled = 0
-let g:ale_lint_on_text_changed = 'normal'
-let g:ale_lint_on_insert_leave = 1
-let g:ale_disable_lsp = 1
 
 
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -184,6 +183,8 @@ autocmd BufEnter * call SyncTree()
 
 au BufRead * normal zR
 
+" ------------ NERD TREE END -----------
+
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 
 " Customize fzf colors to match your color scheme.
@@ -223,4 +224,3 @@ command! -bang -nargs=* Rg
 
 
 colorscheme dracula
-
