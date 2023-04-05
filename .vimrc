@@ -96,7 +96,7 @@ endfunction
 
 " ------------ COC VIM -------------------------
 "
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-eslint'];
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-eslint']
 
 let g:_linters = {'javascript': ['eslint']}
 let g:_completion_enabled = 0

@@ -10,6 +10,10 @@
   "javascript.suggest.completeJSDocs": true,
   "javascript.suggest.enabled": false,
 
+  "suggest.noselect": true,
+  "suggest.selection": "first",
+
+  "suggest.enablePreselect": false,
 
   "typescript.format.enable": false,
   "typescript.showUnused": false
