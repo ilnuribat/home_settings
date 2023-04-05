@@ -37,13 +37,15 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " completer
+" CocInstall coc-json coc-eslint coc-tsserver
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" syntax checks
-Plug 'dense-analysis/ale'
+" syntax checks and linting
+" Removed, coc-vim is enough
+" Plug 'dense-analysis/ale'
 
 " Vastly improved Javascript indentation and syntax support in Vim
- Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
 
 Plug 'scrooloose/nerdtree'
 
@@ -93,12 +95,17 @@ function! CheckBackspace() abort
 endfunction
 
 " ------------ COC VIM -------------------------
+"
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-eslint'];
 
 let g:_linters = {'javascript': ['eslint']}
 let g:_completion_enabled = 0
 let g:_lint_on_text_changed = 'normal'
 let g:_lint_on_insert_leave = 1
 let g:_disable_lsp = 1
+
+let g:javascript_plugin_jsdoc = 0
+
 
 
 " ----- NERD TREE CONFIGS ----------

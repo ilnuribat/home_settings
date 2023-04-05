@@ -1,37 +1,16 @@
 {
-  "tsserver": {
-    "reportStyleChecksAsWarnings": false
-  },
 
-  "typescript": {
-    "suggest": {
-      "enabled": false
-    },
-    "format": {
-      "enabled": false
-    },
-    "suggestionActions": {
-      "enabled": false
-    },
-    "validate": {
-      "enabled": false
-    },
-    "showUnused": false
-  },
+  "javascript.format.enable": true,
 
-  "javascript": {
-    "format": {
-      "enabled": true
-    },
-    "showUnused": false,
-    "suggestionActions": {
-      "enabled": false
-    }
-  },
-  "diagnostics": {
-    "displayByAle": true
-  },
-  "suggest": {
-    "noselect": true
-  }
+  "javascript.showUnused": true,
+
+  "javascript.suggestionActions.enabled": true,
+
+  "javascript.suggest.completeFunctionCalls": true,
+  "javascript.suggest.completeJSDocs": true,
+  "javascript.suggest.enabled": false,
+
+
+  "typescript.format.enable": false,
+  "typescript.showUnused": false
 }
