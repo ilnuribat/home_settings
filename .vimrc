@@ -42,7 +42,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " syntax checks and linting
 " Removed, coc-vim is enough
-" Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 
 " Vastly improved Javascript indentation and syntax support in Vim
 Plug 'pangloss/vim-javascript'

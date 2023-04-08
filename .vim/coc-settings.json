@@ -1,20 +1,18 @@
 {
 
+  "diagnostic.enable": false,
   "javascript.format.enable": true,
-
-  "javascript.showUnused": true,
 
   "javascript.suggestionActions.enabled": true,
 
   "javascript.suggest.completeFunctionCalls": true,
   "javascript.suggest.completeJSDocs": true,
+
   "javascript.suggest.enabled": false,
+  "javascript.suggest.autoImports": false,
 
   "suggest.noselect": true,
   "suggest.selection": "first",
 
-  "suggest.enablePreselect": false,
-
-  "typescript.format.enable": false,
-  "typescript.showUnused": false
+  "suggest.enablePreselect": false
 }
