@@ -9,8 +9,8 @@
   "javascript.suggest.completeJSDocs": true,
 
   "javascript.suggest.enabled": false,
-  "javascript.suggest.autoImports": false,
-
+  // "javascript.suggest.autoImports": false,
+  "javascript.preferences.importModuleSpecifierEnding": "js",
   "suggest.noselect": true,
   "suggest.selection": "first",
 
