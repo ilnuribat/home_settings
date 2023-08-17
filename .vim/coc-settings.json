@@ -14,5 +14,7 @@
   "suggest.noselect": true,
   "suggest.selection": "first",
 
+  "css.format.enable": true,
+
   "suggest.enablePreselect": false
 }

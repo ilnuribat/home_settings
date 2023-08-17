@@ -55,6 +55,8 @@ Plug 'jistr/vim-nerdtree-tabs'
 
 Plug 'airblade/vim-gitgutter'
 
+Plug 'zivyangll/git-blame.vim'
+
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'pearofducks/ansible-vim'
@@ -96,7 +98,7 @@ endfunction
 
 " ------------ COC VIM -------------------------
 "
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-eslint']
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-eslint', 'coc-css']
 
 let g:_linters = {'javascript': ['eslint']}
 let g:_completion_enabled = 0
@@ -112,7 +114,7 @@ let g:javascript_plugin_jsdoc = 0
 let NERDTreeShowLineNumbers=1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-let g:NERDTreeWinSize = 37
+let g:NERDTreeWinSize = 35
 let g:nerdtree_tabs_focus_on_files = 1
 let NERDTreeMapJumpFirstChild='\K'
 let NERDTreeMapJumpLastChild='\J'
@@ -141,7 +143,7 @@ call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
 call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
 call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
 call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
-call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
+call NERDTreeHighlightFile('jsx', 'Magenta', 'none', '#ff00ff', '#151515')
 call NERDTreeHighlightFile('ts', 'Red', 'none', '#ffa500', '#151515')
 
 autocmd StdinReadPre * let s:std_in=1
@@ -225,6 +227,9 @@ nnoremap <silent> <C-p> :FZF -m<CR>
 " Map a few common things to do with FZF.
 nnoremap <silent> <Leader><Enter> :Buffers<CR>
 nnoremap <silent> <Leader>l :Lines<CR>
+
+" Map for git blame
+nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 
 " Allow passing optional flags into the Rg command.
 "   Example: :Rg myterm -g '*.md'
