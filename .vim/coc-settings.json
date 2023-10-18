@@ -9,12 +9,14 @@
   "javascript.suggest.completeJSDocs": true,
 
   "javascript.suggest.enabled": false,
-  // "javascript.suggest.autoImports": false,
   "javascript.preferences.importModuleSpecifierEnding": "js",
   "suggest.noselect": true,
   "suggest.selection": "first",
 
   "css.format.enable": true,
 
-  "suggest.enablePreselect": false
+  "diagnostic.displayByAle": true,
+
+  "suggest.enablePreselect": false,
+  "snippets.userSnippetsDirectory": "~/.vim/snippets"
 }

@@ -1,9 +1,11 @@
 syntax on
+
 set tabstop=2
 set shiftwidth=2
 set smarttab
 set expandtab
 set smartindent
+
 set relativenumber number
 set mouse=a
 set backspace=indent,eol,start
@@ -46,6 +48,7 @@ Plug 'dense-analysis/ale'
 
 " Vastly improved Javascript indentation and syntax support in Vim
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx' " for jsx html
 
 Plug 'scrooloose/nerdtree'
 
@@ -54,8 +57,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jistr/vim-nerdtree-tabs'
 
 Plug 'airblade/vim-gitgutter'
-
-Plug 'zivyangll/git-blame.vim'
 
 Plug 'jiangmiao/auto-pairs'
 
@@ -72,7 +73,13 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'jparise/vim-graphql'
 
+Plug 'KabbAmine/vCoolor.vim'
+
 call plug#end()
+
+" vim-jsx
+let g:jsx_ext_required = 0
+
 
 " ------------ COC VIM -------------------------
 "
@@ -108,13 +115,16 @@ let g:_disable_lsp = 1
 
 let g:javascript_plugin_jsdoc = 0
 
+" --------------dense/ale ------------
+let g:ale_disable_lsp = 1
+
 
 
 " ----- NERD TREE CONFIGS ----------
 let NERDTreeShowLineNumbers=1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-let g:NERDTreeWinSize = 35
+let g:NERDTreeWinSize = 40
 let g:nerdtree_tabs_focus_on_files = 1
 let NERDTreeMapJumpFirstChild='\K'
 let NERDTreeMapJumpLastChild='\J'
@@ -141,7 +151,7 @@ call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
 call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
 call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
 call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
-call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+call NERDTreeHighlightFile('sql', 'Green', 'none', 'red', '#07850A')
 call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('jsx', 'Magenta', 'none', '#ff00ff', '#151515')
 call NERDTreeHighlightFile('ts', 'Red', 'none', '#ffa500', '#151515')
