@@ -1,9 +1,20 @@
 {
+  "typescript.suggest.enabled": false,
+  "typescript.suggestionActions.enabled": false,
+  "typescript.suggest.completeFunctionCalls": false,
+  "typescript.validate.enable": false,
+  "typescript.format.enable": false,
 
   "diagnostic.enable": false,
+
+
   "javascript.format.enable": true,
 
-  "javascript.suggestionActions.enabled": true,
+  "javascript.suggest.jsdoc.generateReturns": true"
+  "javascript.suggestionActions.enabled": false,
+  "javascript.suggest.includeAutomaticOptionalChainCompletions": false,
+
+  "javascript.preferences.quoteStyle": "single",
 
   "javascript.suggest.completeFunctionCalls": true,
   "javascript.suggest.completeJSDocs": true,
