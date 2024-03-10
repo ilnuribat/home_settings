@@ -80,6 +80,9 @@ call plug#end()
 " vim-jsx
 let g:jsx_ext_required = 0
 
+"GoLang
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+
 
 " ------------ COC VIM -------------------------
 "
@@ -105,7 +108,7 @@ endfunction
 
 " ------------ COC VIM -------------------------
 "
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-eslint', 'coc-css']
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-eslint', 'coc-css', 'coc-go']
 
 let g:_linters = {'javascript': ['eslint']}
 let g:_completion_enabled = 0
