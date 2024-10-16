@@ -54,7 +54,7 @@ Plug 'scrooloose/nerdtree'
 
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-Plug 'jistr/vim-nerdtree-tabs'
+"Plug 'jistr/vim-nerdtree-tabs'
 
 Plug 'airblade/vim-gitgutter'
 
@@ -79,9 +79,6 @@ call plug#end()
 
 " vim-jsx
 let g:jsx_ext_required = 0
-
-"GoLang
-autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
 
 " ------------ COC VIM -------------------------
@@ -127,7 +124,7 @@ let g:ale_disable_lsp = 1
 let NERDTreeShowLineNumbers=1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-let g:NERDTreeWinSize = 40
+let g:NERDTreeWinSize = 35
 let g:nerdtree_tabs_focus_on_files = 1
 let NERDTreeMapJumpFirstChild='\K'
 let NERDTreeMapJumpLastChild='\J'
@@ -207,7 +204,13 @@ endfunction
 " Highlight currently open buffer in NERDTree
 autocmd BufEnter * call SyncTree()
 
+" unfold when opening buffer
 au BufRead * normal zR
+
+" Close the tab if NERDTree is the only window remaining in it.
+" fix error https://github.com/jistr/vim-nerdtree-tabs/issues/102
+" and https://github.com/preservim/nerdtree/issues/1411
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
 
 " ------------ NERD TREE END -----------
 
